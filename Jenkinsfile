@@ -15,7 +15,7 @@ pipeline {
         stage("Test"){
             steps {
                 echo ("Start Test")
-                sh("./mwnw test")
+                sh("./mvnw test")
                 echo ("Finish Test")
             }
         }
