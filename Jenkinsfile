@@ -9,8 +9,8 @@ pipeline {
             }
             steps {
                 echo ("Start Job : ${env.JOB_NAME}")
-                echo ("Start build")
-                echo ("Finish Build")
+                echo ("Start build : ${env.BUILD_NUMBER}")
+                echo ("Finish Build : ${env.BRANCH_NAME}")
             }
         }
         stage("Build"){
