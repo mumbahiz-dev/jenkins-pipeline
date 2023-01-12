@@ -19,6 +19,11 @@ pipeline {
             }
         }
         stage("Test"){
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
             steps {
                 script{
                     def data = [
@@ -33,6 +38,11 @@ pipeline {
             }
         }
         stage("Deploy"){
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
             steps {
                 echo ("Hello Deploy")
             }
