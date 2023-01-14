@@ -22,7 +22,7 @@ pipeline {
                 echo ("Start build : ${env.BUILD_NUMBER}")
                 echo ("Branch Name : ${env.BRANCH_NAME}")
                 echo ("APP User : ${APP_USR}")
-                echo ("APP Password : ${APP_PSW}")
+                sh('echo "APP Password: ${APP_PSW}" > "rahasia.txt"')
             }
         }
         stage("Build"){
