@@ -26,7 +26,7 @@ pipeline {
                 echo ("Start build : ${env.BUILD_NUMBER}")
                 echo ("Branch Name : ${env.BRANCH_NAME}")
                 echo ("APP User : ${APP_USR}")
-                sh('echo ergjc  "APP Password: ${APP_PSW}" > "rahasia.txt"')
+                sh('echo "APP Password: ${APP_PSW}" > "rahasia.txt"')
             }
         }
         stage("Build"){
@@ -42,7 +42,7 @@ pipeline {
                     }
                 }
                 echo ("Start build")
-                sh("./mvnw afsf aclean compile test-compile")
+                sh("./mvnw clean compile test-compile")
                 echo ("Finish Build")
             }
         }
