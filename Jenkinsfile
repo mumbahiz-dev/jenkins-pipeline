@@ -5,7 +5,7 @@ pipeline {
         EMAIL = "liqoo.dev@gmail.com"
     }
     options {
-        disableConcurrentBuilds()
+//         disableConcurrentBuilds()
         timeout(time: 10, unit: 'MINUTES')
     }
 
@@ -26,7 +26,7 @@ pipeline {
                 echo ("Start build : ${env.BUILD_NUMBER}")
                 echo ("Branch Name : ${env.BRANCH_NAME}")
                 echo ("APP User : ${APP_USR}")
-                sh('echo "APP Password: ${APP_PSW}" > "rahasia.txt"')
+                sh('echo ergjc  "APP Password: ${APP_PSW}" > "rahasia.txt"')
             }
         }
         stage("Build"){
