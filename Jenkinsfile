@@ -5,6 +5,10 @@ pipeline {
         EMAIL = "liqoo.dev@gmail.com"
     }
 
+    triggers {
+        cron("*/5 * * * *")
+    }
+
     parameters {
         string(name: "NAME", defaultValue: 'GUEST', description: 'What is your name ?')
         text(name: "DESCRIPTION", defaultValue: '', description: 'Tell me about you')
