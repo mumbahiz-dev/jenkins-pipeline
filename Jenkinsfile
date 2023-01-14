@@ -8,7 +8,7 @@ pipeline {
     parameters {
         string(name: "NAME", defaultValue: 'GUEST', description: 'What is your name ?')
         text(name: "DESCRIPTION", defaultValue: '', description: 'Tell me about you')
-        boolenParam(name: "DEPLOY", defaultValue: false, description: 'Need to deploy ?')
+        booleanParam(name: "DEPLOY", defaultValue: false, description: 'Need to deploy ?')
         choice(name: "SOCIAL_MEDIA", choices: ['Instagram', 'Facebook', 'Twitter'], description: 'Which social media')
         password(name: "SECRET", defaultValue: '', description: 'Encryt Key')
     }
