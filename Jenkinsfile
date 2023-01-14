@@ -42,7 +42,7 @@ pipeline {
                     }
                 }
                 echo ("Start build")
-                sh("./mvnw clean compile test-compile")
+                sh("./mvnw afsf aclean compile test-compile")
                 echo ("Finish Build")
             }
         }
