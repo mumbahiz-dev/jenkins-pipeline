@@ -4,12 +4,36 @@ pipeline {
         AUTHOR = "Liqoo Mumbahiz Alchuluq"
         EMAIL = "liqoo.dev@gmail.com"
     }
+
+    parameters {
+        string(name: "NAME", defaultValue: 'GUEST', description: 'What is your name ?')
+        text(name: "DESCRIPTION", defaultValue: '', description: 'Tell me about you')
+        boolenParam(name: "DEPLOY", defaultValue: false, description: 'Need to deploy ?')
+        choice(name: "SOCIAL_MEDIA", choices: ['Instagram', 'Facebook', 'Twitter'], description: 'Which social media')
+        password(name: "SECRET", defaultValue: '', description: 'Encryt Key')
+    }
     options {
         disableConcurrentBuilds()
         timeout(time: 10, unit: 'SECONDS')
     }
 
     stages {
+        stage("Parameter"){
+            agent {
+                node {
+                    label "linux && java11"
+                }
+            }
+            steps {
+                echo ("Hello ${params.NAME}")
+                echo ("Your description is ${params.DESCRIPTION}")
+                echo ("Your social media is ${params.SOCIAL_MEDIA}")
+                echo ("Need to deploy L  ${params.DEPLOY}")
+                echo ("Your secret is ${params.SECRET}")
+
+            }
+        }
+
         stage("Prepare"){
             environment{
                 APP = credentials("mumbahiz_rahasia")
