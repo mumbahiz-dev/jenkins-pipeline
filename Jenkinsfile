@@ -5,8 +5,8 @@ pipeline {
         EMAIL = "liqoo.dev@gmail.com"
     }
     options {
-//         disableConcurrentBuilds()
-        timeout(time: 10, unit: 'MINUTES')
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'SECONDS')
     }
 
     stages {
