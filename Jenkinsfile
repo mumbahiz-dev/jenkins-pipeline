@@ -101,7 +101,7 @@ pipeline {
                 ok "Yes, of course."
                 submitter "super_admin"
                 parameters{
-                    choice(name: TARGET_ENV, choices: ['DEV', 'STAG', "PROD"], description: 'we will deploy to ?')
+                    choice(name: 'TARGET_ENV', choices: ['DEV', 'STAG', "PROD"], description: 'we will deploy to ?')
                 }
             }
             agent {
