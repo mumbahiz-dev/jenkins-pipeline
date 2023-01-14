@@ -4,6 +4,10 @@ pipeline {
         AUTHOR = "Liqoo Mumbahiz Alchuluq"
         EMAIL = "liqoo.dev@gmail.com"
     }
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'MINUTES')
+    }
 
     stages {
         stage("Prepare"){
